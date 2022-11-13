@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61709bacb116477482526b3f84736ef4" Name="Diagram1">
+        <EntityTypeShape EntityType="SMSModel.Account" Width="1.5" PointX="5.25" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Course" Width="1.5" PointX="8.25" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Hours" Width="1.5" PointX="6" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Invitation" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.MenuItem" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.NameOfCourse" Width="1.5" PointX="6" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Role" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.RoleMenu" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Student" Width="1.5" PointX="8.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Teach" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Teacher" Width="1.5" PointX="3" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMSModel.Weekdays" Width="1.5" PointX="6" PointY="26.875" IsExpanded="true" />
+        <AssociationConnector Association="SMSModel.FK_Account_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Account_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Account_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Course_Hours" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Course_NameOfCourse" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Course_Weekdays" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Invitation_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Teach_Course" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Invitation_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Invitation_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_RoleMenu_MenuItem" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_RoleMenu_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Student_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Teacher_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Student_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="SMSModel.FK_Teach_Teacher" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

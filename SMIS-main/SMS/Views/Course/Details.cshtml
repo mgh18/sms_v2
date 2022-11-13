@@ -1,0 +1,46 @@
+﻿@model DataLayer.Models.Course
+
+@{
+    ViewBag.Title = "جزئیات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-right col-10">
+    <h2>جزئیات </h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <strong>عنوان دوره</strong>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NameOfCourse.Course_Title)
+            </dd>
+
+            <dt>
+                <strong>روز برگزاری دوره</strong>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Weekdays.DayName)
+            </dd>
+
+            <dt>
+                <strong>ساعت برگزاری دوره</strong>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Hours.HoursTitle)
+            </dd>
+
+
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("ویرایش اطلاعات", "Edit", new { id = Model.Sysid }) |
+        @Html.ActionLink("بازگشت به لیست دوره ها", "Index")
+    </p>
+</div>

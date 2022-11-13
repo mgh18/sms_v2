@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DataLayer.Models.Invitation>
+
+@{
+    ViewBag.Title = "دوره ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text-right col-10">
+    
+        <h4 style="padding:2%">:دوره هایی که به آنها دعوت شده اید </h4>
+  
+    <table class="table">
+        <tr>
+            <th></th>
+            <th>
+            پذیرش دعوت
+           </th>
+            <th>
+                ساعت برگزاری دوره
+            </th>
+            <th>
+                روز برگزاری دوره
+            </th>
+            <th>
+                مدرس دوره
+            </th>
+            <th>
+                عنوان دوره
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.Sysid }, new { @class = "btn btn-primary li fa fa-pen" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAccepted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Hours.HoursTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Weekdays.DayName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.NameOfCourse.Course_Title)
+                </td>
+            </tr>
+        }
+
+
+    </table>
+</div>

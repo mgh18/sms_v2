@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DataLayer.Models.Course>
+
+@{
+    ViewBag.Title = "دوره ها";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Raw(TempData["msg"])
+<div class="text-right col-10">
+    <p>
+        @{
+
+            @Html.ActionLink("ایجاد دوره جدید", "Create", new { }, new { @class = "btn btn-primary" });
+
+        }
+        <table class="table">
+            <tr>
+                <th>
+                </th>
+                <th>
+                    ساعت برگزاری دوره
+                </th>
+                <th>
+                    روز برگزاری دوره
+                </th>
+                <th>
+                    عنوان دوره
+                </th>
+
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @{
+
+                            @Html.ActionLink(" ", "Edit", new { id = item.Sysid }, new { @class = "btn btn-primary li fa fa-pen" });
+                            @Html.ActionLink(" ", "Details", new { id = item.Sysid }, new { @class = "btn  btn-success li fa fa-eye" });
+
+
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hours.HoursTitle)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weekdays.DayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOfCourse.Course_Title)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </p>
+</div>

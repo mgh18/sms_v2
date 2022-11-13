@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DataLayer.Models.Invitation>
+
+@{
+    ViewBag.Title = "دعوت";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.Raw(TempData["msg"])
+<p class="text-right col-10">
+    @Html.ActionLink("دعوت", "Create", new { }, new { @class = "btn btn-primary" })
+
+</p>
+<div class="text-right col-10">
+    <table class="table">
+        <tr>
+            <th>
+                دعوت شده
+            </th>
+            <th>
+                نام دانشجو
+            </th>
+            <th>
+                عنوان دوره
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Invite)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Student.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.NameOfCourse.Course_Title)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

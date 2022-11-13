@@ -1,0 +1,91 @@
+﻿@using DataLayer.Models
+@model Account
+@{
+    ViewBag.Title = "ورود";
+    Layout = null;
+}
+
+<head dir="rtl">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/plugins/dist/css/adminlte.min.css">
+    <style>
+        .container {
+            position: relative;
+            width: 284px;
+            padding: 10px 10px 20px 10px;
+            border: 1px solid #BFBFBF;
+            background-color: white;
+            box-shadow: 12px 12px 5px #aaaaaa;
+            width: 40%;
+            direction: rtl;
+        }
+    </style>
+    @*{
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            Session.RemoveAll();
+            Session.Abandon();
+            Session.Contents.RemoveAll();
+        }*@
+</head>
+<body style="background-color:#dee2e7; ">
+    <div class="container center border-dark" style="margin-top:1%;">
+        <h3 style="text-align:center">سامانه آنلاین مدیریت کلاسهای آموزشگاه </h3>
+        <img src="~/Content/images/pngegg.png" style="margin-left:150" width="200" height="200" />
+    </div>
+    <div class="container center border-dark" style="margin-top: 1%;">
+        <section id="loginForm" style="margin-right:10%;">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Role, "ورود به عنوان:", new { @class = "col-md-3 control-label  float-right" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.RoleID, new List<SelectListItem>
+                                               {
+                       new SelectListItem { Text="استاد", Value="2"},
+                       new SelectListItem { Text="دانشجو", Value="3"},
+                   },
+                                       new { @class = "form-control" }
+                                           )
+                        @Html.ValidationMessageFor(m => m.RoleID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group" style="direction: rtl;">
+                    @Html.LabelFor(m => m.TeacherID, "شناسه کاربری:", new { @class = "col-md-3 control-label float-right" })
+                    <div class="col-md-10" style="direction: rtl;">
+                        @Html.TextBoxFor(m => m.Student.Id, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.TeacherID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="direction: rtl;">
+                    @Html.LabelFor(m => m.Password, "رمزعبور:", new { @class = "col-md-2 control-label float-right" })
+                    <div class="col-md-10" style="direction: rtl;">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control " })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 " >
+                        <button type="submit" class="btn btn-success" ><i class="fa fa-sign"></i>ورود</button>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+
+</body>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

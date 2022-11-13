@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "صفحه اصلی";
+}
+<script src="~/Scripts/chart/exporting.js"></script>
+<script src="~/Scripts/chart/highcharts.js"></script>
+
+
+
+<section class="content">
+    <div class="box box-primary" style="padding:1%">
+        <div class="row">
+            <div class="col-lg-3 col-xs-12 col">
+               
+                <div class="small-box bg-green">
+                    <div class="inner">
+
+                        <h3 style="font-family:'B Nazanin'">@ViewBag.totalStudents</h3>
+
+                        <p>لیست دانشجویان</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="/Student/Index" class="small-box-footer">ادامه  <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-12 col">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3>@ViewBag.classes</h3>
+
+                        <p>دعوت از دانشجو</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-book-open"></i>
+                    </div>
+                    <a href="/Invitation/Index" class="small-box-footer">ادامه <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-12 col">
+                <div class="small-box bg-yellow">
+                    <div class="inner">
+                        <h3></h3>
+
+                        <p>آمار مربوط به دوره ها</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-book-reader"></i>
+                    </div>
+                    <a href="/Stats/Index/" class="small-box-footer">ادامه <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-12 col">
+                
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3 style="font-family:'B Nazanin'">@ViewBag.courses</h3>
+
+                        <p>دوره های ارائه شده</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <a href="/Course/Index" class="small-box-footer">ادامه  <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div> 
+        </div>
+        </div>
+    <div class="jumbotron">
+        <div id="container"></div>
+    </div>
+</section>
+

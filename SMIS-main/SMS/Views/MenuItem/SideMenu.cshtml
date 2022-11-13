@@ -1,0 +1,44 @@
+﻿@using DataLayer.Models
+
+
+<div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            @{
+                if (Session["Photo"] != "No Photo")
+                {
+                    <img src="~/Content/images/default.jpg" class="img-circle" alt="User Image" />
+                }
+                else
+                {
+                    <img src='~/@Session["Photo"]' class="img-circle" alt="User Image" />
+                }
+            }
+        </div>
+        
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+           
+            <div class="nav-item text-right">
+
+                <a href="#" class="nav-link">
+                    @Session["Role"] @Session["Name"]
+                </a>
+            </div>
+            <div class="nav-item text-right">
+                <a href="~/Account/Login/" class="nav-link">
+                    <p>
+                        <span class="right badge badge-danger">خروج</span>
+                    </p>
+                </a>
+            </div>
+                
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+</div>
